@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../scripts/app.js" defer type="module"></script>
+    <script type="module" src="../scripts/contatos.js"></script>
+    <title>Contatos</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Cadastro de contatos</h1>
+    </header>
+
+    <main>
+
+        <div class="container_cadastro">
+            <div class="linha">
+                <label class="name">Nome</label>
+                <input id="nome" type="text" required placeholder="Ex. Francisco Wala">
+
+                <label class="foto">Foto</label>
+                <input id="foto" type="image" required>
+            </div>
+
+            <div class="linha">
+                <label class="contato">Contato</label>
+                <input id="contato" type="text" required placeholder="Ex. (11)9 99999999">
+
+                <label class="endereco" >Endereço</label>
+                <input id="endereco" type="text" required placeholder="Ex. Av. Renê Benedito">
+            </div>
+
+            <div class="linha">
+
+                <label class="email">Email</label>
+                <input id="email" type="text" required placeholder="Ex. nome@gmail.com">
+
+                <label class="cidade">Cidade</label>
+                <input id="cidade" type="text" required placeholder="Ex. Manaus">
+
+            </div>
+
+        </div>
+        <div class="btn_save" id="btn_salvar">
+            <button id="btn_salvar">SALVAR</button>
+        </div>
+
+        <div class="container_contatos">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>celular</th>
+                        <th>Imagem</th>
+                        <th>Email</th>
+                        <th>Endereço</th>
+                        <th>Cidade</th>
+                        <th>Editar itens</th>
+                    </tr>
+                </thead>
+                <tbody id="table_body">
+
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        copyright @Francisco Wala 2026
+    </footer>
+
+</body>
+
+</html>
