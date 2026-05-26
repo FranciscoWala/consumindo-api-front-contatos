@@ -44,70 +44,86 @@ async function pegarNovoContato () {
 
 document.getElementById("btn_salvar").addEventListener("click", await pegarNovoContato(await postContato(contato)))
 
+// pegarNovoContato()
+
 }
-pegarNovoContato()
+
 // function mostrarTabela () {
 
 // }
 
-// function criarTabela () {
+function criarTabela () {
 
-//   const corpoTabela = document.getElementById("table_body")
+  const corpoTabela = document.getElementById("table_body")
 
-//   let linhaPrincipal = document.createElement("tbody")
+  let linhaPrincipal = document.createElement("tbody")
 
-//   let celulaNome = createElement("tr")
-//   celulaNome.textContent = contato.nome
+  let celulaNome = createElement("tr")
+  celulaNome.textContent = contato.nome
 
-//   /*
-//   const tableBody = document.getElementById('table-body')
-//     let linha = document.createElement('tr')
-//     linha.className = 'linha'
+  let celulaFoto = document.createElement("img")
+  celulaFoto.src = contato.foto
+  celulaFoto.width = "40"
+  
+  let celulaNumero = document.createElement("td")
+  celulaNumero.textContent = contato.celular
+
+  let celulaEmail = document.createElement("td")
+  celulaEmail.textContent = contato.email
+
+  let celulaContato = document.createElement('td')
+  celulaContato.textContent = contato.endereco
+
+  let celulaCidade = document.createElement('td')
+  celulaCidade.textContent = contato.cidade
+
+  // let editar = document.createElement('button')
+  // editAction.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4Z"/></svg>`
+  // editAction.addEventListener('click', () => atualizarContato(contato.id))
+
+  // let deletar = document.createElement('button')
+  // deleteAction.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg>`
+  // deleteAction.addEventListener('click', () => excluirContato(contato.id))
+
+  let celulaEditar = document.createElement('td')
+  celulaEditar.appendChild(editAction)
+  celulaEditar.appendChild(deleteAction)
+
+  linha.appendChild(celulaNome)
+  linha.appendChild(celulaFoto)
+  linha.appendChild(celulaNumero)
+  linha.append(celulaEmail)
+  linha.append(celulaContato)
+  linha.append(cidadeCell)
+  linha.appendChild(actionCell)
+
+  return linha
+  /*
+  const tableBody = document.getElementById('table-body')
+    let linha = document.createElement('tr')
+    linha.className = 'linha'
+
+    let editAction = document.createElement('button')
+    editAction.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4Z"/></svg>`
+    editAction.addEventListener('click', () => atualizarContato(contato.id))
+
+    let deleteAction = document.createElement('button')
+    deleteAction.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg>`
+    deleteAction.addEventListener('click', () => excluirContato(contato.id))
+
+    let actionCell = document.createElement('td')
+    actionCell.appendChild(editAction)
+    actionCell.appendChild(deleteAction)
 
 
-//     let nomeCell = document.createElement('td')
-//     nomeCell.textContent = contato.nome
-
-//     let picture = document.createElement('img')
-//     picture.src = contato.foto
-//     picture.width = '40'
-
-//     let pictureCell = document.createElement('td')
-//     pictureCell.appendChild(picture)
-
-//     let phoneCell = document.createElement('td')
-//     phoneCell.textContent = contato.celular
-
-//     let emailCell = document.createElement('td')
-//     emailCell.textContent = contato.email
-
-//     let enderecoCell = document.createElement('td')
-//     enderecoCell.textContent = contato.endereco
-
-//     let cidadeCell = document.createElement('td')
-//     cidadeCell.textContent = contato.cidade
-
-//     let editAction = document.createElement('button')
-//     editAction.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4Z"/></svg>`
-//     editAction.addEventListener('click', () => atualizarContato(contato.id))
-
-//     let deleteAction = document.createElement('button')
-//     deleteAction.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg>`
-//     deleteAction.addEventListener('click', () => excluirContato(contato.id))
-
-//     let actionCell = document.createElement('td')
-//     actionCell.appendChild(editAction)
-//     actionCell.appendChild(deleteAction)
+    linha.appendChild(nomeCell)
+    linha.appendChild(pictureCell)
+    linha.appendChild(phoneCell)
+    linha.append(emailCell)
+    linha.append(enderecoCell)
+    linha.append(cidadeCell)
+    linha.appendChild(actionCell)
 
 
-//     linha.appendChild(nomeCell)
-//     linha.appendChild(pictureCell)
-//     linha.appendChild(phoneCell)
-//     linha.append(emailCell)
-//     linha.append(enderecoCell)
-//     linha.append(cidadeCell)
-//     linha.appendChild(actionCell)
-
-
-//     return linha*/
-// }
+    return linha*/
+}
